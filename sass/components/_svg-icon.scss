@@ -1,0 +1,16 @@
+
+.svg-icon {
+    transition: all .4s ease-in-out;
+
+
+    &--orange:hover {
+        color: $color-orange;
+        transform: translateY(-5px);
+    }
+    &--white:hover {
+        transform: translateY(-5px);
+        color: $color-light;
+    }
+
+
+}

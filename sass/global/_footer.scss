@@ -1,0 +1,105 @@
+.footer {
+
+    display: grid;
+    text-align: center;
+    align-items: center;
+    padding: 2em;
+    background-color: $color-blue-dark;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo icons nav"
+                         "logo links nav";
+
+    & > * {
+        padding: 1em;
+    }
+
+    @include respond(sm) {
+        font-size: 14.5px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "logo"
+                             "icons"
+                             "nav"
+                             "links"
+    }
+
+    &__logo {
+        grid-area: logo;
+        img {
+            max-width: 10em;
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__icons {
+        grid-area: icons;
+        .social-list {
+            display: flex;
+            justify-content: center;
+            li {
+                margin: 0 1em;
+                color: $color-cyan;
+                svg {
+                    color: $color-cyan;
+                    width: 1.5em;
+                    height: 1.5em;
+                    transition: transform .2s ease-out;
+                    path {
+                        color: currentColor;
+                    }
+                }
+                &:hover {
+                    svg {
+                        color: $color-light;
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+    }
+
+    &__links {
+        grid-area: links;
+        ul {
+            display: flex;
+            justify-content: center;
+            li {
+                margin: 0 .5em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                a {
+                    text-decoration: underline;
+                    white-space: nowrap;
+                    font-size: .9em;
+           
+                }
+                
+                &:first-child {
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        height: 70%;
+                        width: 1px;
+                        background-color: $color-light;
+                        margin-left: 1em;
+                    }
+                }
+            }
+        }
+    }
+    &__nav {
+        grid-area: nav;
+        justify-self: center;
+        .footer-nav {
+            text-align: left;
+            li {
+                padding: .2em 0;
+
+            }
+            @include respond(sm) {
+                text-align: center;
+      
+            }
+        }
+    }
+}

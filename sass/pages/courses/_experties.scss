@@ -1,0 +1,349 @@
+.experties {
+    background-color: $color-gray;
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        padding-left: 5%;   
+        margin: 0 auto;
+        overflow: hidden;
+        @include respond(md) {
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+    
+    .expertise-nav {
+        background: $color-light;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 5%;
+        
+        @include respond(md) {
+            width: 100%;
+            background: none;
+            margin: 0;
+        }
+        &__head {
+            padding: 4em 2em;
+            .heading {@include divider($color-orange, center);}
+            @include respond(md) {
+                padding: 5em 2em 1em;
+            }
+            
+        }
+        &__list {
+            padding: 0em 5em;
+            @include respond(md) {
+                display: flex;
+                background: $color-light;
+                width: 100%;
+                padding: 25px 0;
+                margin: 0 auto;
+            }
+        }
+        &__item {
+            @include respond(md) {
+                &:not(:last-child) {
+                    border-right: 1px solid currentColor;
+                }
+            }
+        }
+    }
+
+    .expertise-btn {
+        position: relative;
+        text-align: left;
+        background: none;
+        border: 0;
+        outline: 0;
+        &:active, &:focus {
+            outline: 0;
+            border: none;
+        }
+        padding: 1em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        @include respond(md) {
+           flex-direction: column-reverse;
+           text-align: center;
+        }
+        &__text {
+            font-size: 1.1rem;
+            color: $color-dark;
+            transition: all .4s ease-in-out;
+            @include respond(md) {
+                width: 80px;
+                margin: 0 auto;
+            }
+        }
+        &__icon {
+            padding-right: 1em;
+            @include respond(md) {
+                padding-right: 0;
+                padding-bottom: 1em;
+             }
+            transition: all .4s ease-in-out;
+            svg {
+                width: 3em;
+                height: 3em;
+                @include respond(md) {
+                    width: 3.6em;
+                    height: 3.6em;
+                 }
+            }
+        }
+
+        &:hover {
+           @include respond(mdUp) {
+                .expertise-btn__text {
+                    transform: translateX(3px);
+                }
+
+        
+                
+                       .expertise-btn__icon {
+                           color: $color-orange;
+                           transform: scale(1.1);
+                       }
+            }
+        }
+
+        &--active {
+            .expertise-btn__text {
+                font-weight: 700;
+            }
+            .expertise-btn__icon {
+                color: $color-cyan;
+            }
+        }
+
+        @include respond(mdUp) {
+            &::after {
+                content: "";
+                background-color: currentColor;
+                display: block;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+    }
+    
+    .expertise-menu {
+        flex: 1;
+        padding: 4em;
+        padding-right: 1%;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include respond(md) {
+            width: 100%;
+            padding: 1em 0;
+            justify-content: center;
+        }
+        @include respond(sm) {
+            padding: 1em 3em;
+            justify-content: center;
+        }
+        
+        &__box {
+            position: relative;
+            min-height: 12em;
+            flex: 0 0 14em;
+            margin: 8px;
+            text-align: center;
+            background-color: $color-light;
+            transition: all .3s ease-in-out;
+            display: none;
+
+            box-shadow: 
+            0 1px 2px rgba(0,0,0,0.01), 
+            0 2px 4px rgba(0,0,0,0.01), 
+            0 4px 8px rgba(0,0,0,0.01);
+            
+            &--active {
+                display: block;
+            }
+            &:hover {
+                transform: scale(1.02);
+
+                box-shadow: 
+                0 1px 2px rgba(0,0,0,0.03), 
+                0 2px 4px rgba(0,0,0,0.03), 
+                0 4px 8px rgba(0,0,0,0.03);
+    
+
+                .expertise-menu__text {
+                    color: $color-orange;
+                }
+                .expertise-menu__arrow {
+                    opacity: 1 ;
+                }
+            }
+            @include respond(md) {
+                padding: 1em;
+                flex-basis: 40%;
+                min-height: initial;
+            }
+            @include respond(sm) {
+                flex-basis: 100%;
+            }
+            
+        }
+        
+        &__input { 
+            display: none; 
+            pointer-events: none;
+        }
+
+        &__label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border: 2px solid;
+            border-color: transparent;
+            transition: border-color .3s ease-in-out;
+            @include respond(md) {
+                justify-content: flex-start;
+            }
+
+        } 
+        &__input:checked + label {
+            .svg-box {
+                color: $color-orange;
+            }
+            .svg-rect {stroke-dashoffset: 640;}
+            .svg-check {stroke-dashoffset: 0;}
+            @include respond(mdUp) {
+                border-color: $color-orange;
+            }
+        }
+
+
+
+        .svg-box {
+            color: $color-cyan;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            @include respond(md) {
+                bottom: 50%;
+                left: 0;
+                transform: translate(0, 50%);
+            }
+
+    
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background-color: currentColor;
+            display: block;
+            width: 3em;
+            height: 4px;
+            transition: all .3s ease-in-out;
+            z-index: 100;
+
+               @include respond(md) {
+                   width: 4px;
+                   height: 1.5em;
+                   left: 0;
+                   bottom: 50%;
+                   transform: translateY(50%);
+               }
+
+            }
+            
+            svg {
+                width: 1.5em;
+                stroke: currentColor;
+                stroke-width: 5;
+                fill: #fff;
+                margin-bottom: 8px;
+
+                @include respond(md) {
+                     margin-bottom: 0;
+                     margin-left: 8px;
+                }
+            }
+            
+            .svg-rect {
+                stroke-dasharray: 320;
+                stroke-dashoffset: 0;
+                fill: #fff;
+                transition: stroke-dashoffset .7s ease-out;
+            }
+
+            .svg-check {
+                stroke-dasharray: 70;
+                stroke-dashoffset: 70;
+                stroke-width: 10;
+                fill: none;
+                transition: stroke-dashoffset .3s linear;
+            }
+            
+        }
+
+        &__link {
+            color: currentColor;
+            text-decoration: none;
+
+            @include respond(mdUp) {
+                text-decoration: none;
+            }
+            @include respond(md) {
+                padding-left: 2em;
+                text-align: left;
+            }
+
+            
+        }
+
+        &__arrow {
+                position: absolute;
+                padding-left: 1em;
+                right: 5%;
+                top: 55%;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                color: $color-orange;
+            @include respond(md) {
+                display: none;
+            }
+        }
+        &__text {
+            color: $color-blue-dark;
+            line-height: 1.7;
+            transition: color .3s ease-in-out;
+            display: inline-block;
+            font-weight: 700;
+            @include respond(mdUp) {
+                text-align: center;
+            &--sub {
+
+                display: block;
+            }
+        }
+
+        }
+    }
+ 
+}
+
+
+

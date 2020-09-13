@@ -1,0 +1,132 @@
+.quote {
+    background-color: $color-light;
+    padding: 5em;
+
+@include respond(md) {
+        padding: 2em;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "heading selection"
+                              "content selection"
+                              "form selection";
+        @include respond(md) {
+        text-align: center;
+        padding: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas: "heading"
+                             "selection"
+                             "content"
+                             "form";
+        }
+    }
+    
+
+    &__heading {
+        grid-area: heading;
+
+    .heading {
+        @include divider($color-orange, left);
+        @include respond(md) {
+            @include divider($color-orange, center);
+        }
+    }
+
+    }
+
+    &__content {
+        grid-area: content;
+        .lead {
+            margin: 1.5em 0.5em 0.5em 0;
+            color: $color-blue-dark;
+     @include respond(md) {
+                margin: 1em;
+            }        
+        }
+    }
+
+    &__form {
+        grid-area: form;
+@include respond(md) {
+            padding: 0em 5em;
+        }
+     @include respond(sm) {
+         padding: 0;
+
+        }
+    }
+
+    &__selection {
+        grid-area: selection;
+        justify-self: center;
+        margin-top: 4em;
+        padding: 2em 6em;
+@include respond(md) {
+    padding: 2em;
+}
+
+ 
+        .text {
+            text-transform: uppercase;
+            color: $color-orange;
+            font-weight: 700;
+            font-size: 1.2rem;
+
+            @include respond(sm) {
+                font-size: 1rem;
+            }
+
+            &--empty {
+                color: $color-blue-dark;
+                font-weight: 400;
+                margin: 1em 0;
+            }
+        }
+        &__list {
+            margin-top: 1em;
+        }
+
+        
+ 
+        .selected___course___item {
+            color: $color-blue-dark;
+            font-weight: 700;
+            margin: 1em 0;
+            display: flex;
+            align-items: center;
+            font-size: .9rem;
+            @include respond(md) {
+                text-align: left;
+            }
+        }
+        .remove__course__button {
+            border: 1px solid black;
+            background: none;
+            cursor: pointer;
+            line-height: 0;
+            margin-right: .8em;
+            &:hover {
+                svg path {
+                    fill: rgb(192, 4, 4);
+                }
+            }
+          
+            
+            svg {
+                width: 1.2rem;
+                height: 1.2rem;
+                path {
+                    fill: black;
+                }
+            }
+        }
+
+    }
+
+
+}
+
+
+

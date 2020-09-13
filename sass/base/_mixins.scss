@@ -1,0 +1,43 @@
+@mixin divider($clr: $color-orange, $align: left) {
+    &::after {
+        content: "";
+        background-color: $clr;
+        height: 5px;
+        display: block;
+        width: 3.5em;
+        margin: .5em 0;
+        @if $align == center {
+            margin: .6em auto;
+        } 
+    }
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == xl {
+        @media only screen and (min-width: 1537px) { @content };
+    }
+
+    @if $breakpoint == lg {
+        @media only screen and (max-width: 1536px) { @content };  
+    }
+    @if $breakpoint == md {
+        @media only screen and (max-width: 992px) { @content };  
+    }
+    @if $breakpoint == mdUp {
+        @media only screen and (min-width: 993px) { @content };  
+    }
+
+    @if $breakpoint == sm {
+        @media only screen and (max-width: 576px) { @content }; 
+    }
+
+    @if $breakpoint == smUp {
+        @media only screen and (min-width: 576px) { @content }; 
+    }
+
+    @if $breakpoint == xs {
+        @media only screen and (max-width: 340px) { @content }; 
+    }
+
+}
+

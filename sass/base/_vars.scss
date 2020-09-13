@@ -1,0 +1,27 @@
+
+// Colors
+   $color-blue:         #0069BB;
+   $color-orange:       #F05D43;
+   $color-cyan:         #00F1DC;
+   $color-purple:       #672B94;
+   $color-light:        #ffffff;
+   $color-gray:         #eeeeee;
+   $color-gray-dark:    #c2c2c2;
+   $color-dark:         #000000;
+   $color-blue-dark:    #001741;
+   $color-purple-dark:  #200B30;
+
+   $errorRed:            #ff3838;
+
+// Fonts
+$font-primary: 'IBM Plex Sans', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+
+// Section's Height
+:root {
+   --nav-space-x: 8em;
+   --form-space: 5px;
+   @include respond(md) {
+      --nav-space-x : 2em;
+   }
+}

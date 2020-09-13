@@ -1,0 +1,42 @@
+.customers {
+    padding: 6em 0;
+    text-align: center;
+
+    @include respond(sm) {
+        padding: 4em 2em 0;
+    }
+
+    h2 {
+        @include divider($color-orange, center);
+    }
+
+    &__logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 70em;
+        width: 100%;
+        margin: 2em auto;
+    }
+    &__logo {
+        flex: 0 0 14em;
+        padding:  1em;
+        transition: transform .2s ease-out;
+
+        @include respond(sm) {
+            flex: 0 0 11em;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+        }
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+
+}

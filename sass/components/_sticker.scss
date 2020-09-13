@@ -1,0 +1,29 @@
+.sticker {
+    position: absolute;
+    background-color: $color-cyan;
+    z-index: 20;
+    right: 0;
+    bottom: 112px;
+    padding: .9em 3em;
+    border-top-left-radius: 6em;
+    border-bottom-left-radius: 6em;
+    transform: translateX(100%);
+    opacity: 0;
+    animation: slideIn .6s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+
+    p {font-size: 1.3rem;}
+
+    @include respond(md) {
+        bottom: 40px;
+    }
+}
+
+
+@keyframes slideIn {
+
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

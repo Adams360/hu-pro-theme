@@ -1,0 +1,71 @@
+// Select Box Dropdown
+.select-box {
+    flex-basis: 100%;
+    padding: .3em;
+    padding-bottom: 0;
+    &__selected {
+        display: flex;
+        align-items: center;
+        background-color: lightgray;
+        padding: 1em .75em;
+        cursor: pointer;
+        transition: background-color .3s ease-in-out;
+        &:hover {
+            background-color: lighten($color: lightgray, $amount: 5%);
+        }
+
+        &--active {
+            .select-box__arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &__text {
+        font-weight: 700;
+    }
+
+    &__arrow {
+            transition: transform .3s ease-in-out;
+            margin-left: 1em;
+            width: .8em;
+            height: .8em;
+    }
+
+    // The List
+    &__options {
+        background-color: #bbb;
+        color: $color-dark;
+        pointer-events: none;
+        transition: all .3s ease-in-out;
+        overflow-y: scroll;
+        opacity: 0;
+        max-height: 0;
+        width: 100%;
+        &--active {
+            pointer-events: initial;
+            max-height: 15em;
+            opacity: 1;
+        }
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            background-color: rgba($color-dark, .3);
+
+            &-thumb {
+                background-color: $color-orange;
+            }
+        }
+    }
+
+    &__option {
+        cursor: pointer;
+        padding: 1em;
+        &:hover {
+            background-color: lighten($color: lightgray, $amount: 5%);
+        }
+
+        .radio-input {
+            display: none;
+        }
+    }
+}

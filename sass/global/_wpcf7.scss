@@ -1,0 +1,22 @@
+.wpcf7 {
+    position: relative;
+    .wpcf7-list-item-label {
+        margin-left: 5px;
+    }
+    .ajax-loader,
+    &.is-loading {
+        display: none !important;
+    }
+
+
+    .expertise_selection {
+        width: 100%;
+        margin: var(--form-space);
+        .expertise-selection {
+            width: 100%;
+            padding: 1em .75em;
+        }
+    }
+    
+ 
+}

@@ -1,0 +1,114 @@
+.syllabus-header {
+    height: calc(100vh - var(--partners-height));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: 
+    linear-gradient(to top, rgba($color-dark, .8), transparent),
+    url(../img/syllabus/hero-python.png);
+
+   @include respond(md) {
+        background-image: 
+        linear-gradient(to top, rgba($color-dark, .8), transparent),
+        url(../img/syllabus/hero-python-mobile.png);
+    }
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 30vh;
+     @include respond(md) {
+        padding-top: 14em;
+    }
+    &__text {
+        text-align: center;
+        align-self: center;
+        padding: 1em;
+    }
+
+    // Inside the header__text element.
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 22em;
+        margin: 1em auto;
+        p {
+            color: $color-light;
+            font-size: 2.7rem;
+        }
+    }
+
+    &__btns {
+        text-align: center;
+        margin: 2em auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 50em;
+
+         @include respond(md) {
+            flex-direction: column;
+            padding: 0em 5em;
+            order: 3;
+        }
+    }
+
+    &__btn {
+        display: inline-block;
+        text-decoration: none;
+        color: $color-light;
+        font-size: 1.3rem;
+        padding: .4em 1em;
+        background: transparent;
+        border: 2px solid;
+        border-color: transparent;
+        transition: all .3s ease-in-out;
+        flex: 1;
+        font-family: $font-secondary;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 0 .7em;
+
+         @include respond(md) {
+            margin: .5em 0 ;
+        }
+     
+        &--full {
+            background-color: $color-orange;
+            &:hover {
+                border-color: $color-orange;
+                background-color: rgba($color-orange, .1 );
+            }
+        }
+        &--ghost {
+            border-color: $color-orange;
+            &:hover {
+                border-color: $color-light;
+            }
+        }
+    }
+
+
+    &__sticker {
+
+        background-color: $color-cyan;
+        color: $color-dark;
+        z-index: 20;
+        padding: .7em 3em;
+        border-top-left-radius: 6em;
+        border-bottom-left-radius: 6em;
+        font-size: 1.5rem;
+        align-self: flex-end;
+        margin-top: 3em;
+        margin-bottom: 3em;
+
+         @include respond(md) {
+            margin: 0;
+            padding: 1em 2em;
+            font-size: 1rem;
+        }
+
+    }
+}
+

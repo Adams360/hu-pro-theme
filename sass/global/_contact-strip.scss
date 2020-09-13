@@ -1,0 +1,19 @@
+.contact-strip {
+    padding: 3em;
+    background: 
+    linear-gradient(rgba($color-light, .6), rgba($color-light, .6)),
+    url(../img/global/contact/bg-contact.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include respond(md) {
+        background: 
+        linear-gradient(rgba($color-light, .6), rgba($color-light, .6)),
+        url(../img/global/contact/bg-contact-mobile.png);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+}

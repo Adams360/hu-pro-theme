@@ -1,0 +1,84 @@
+.contact {
+    position: relative;
+    background-image:
+    url(../img/global/contact/bg-contact.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6em;
+
+    @include respond(sm) {
+        padding: 3em;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.534);
+    }
+
+}
+
+:root {
+    --form-space: 5px;
+}
+
+.form {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &__group {
+        flex: 1 1 calc( 50% - var(--form-space) * 2 );
+        margin: var(--form-space);
+        @media screen and (max-width: 576px) {
+            flex-basis: 100%;
+        }
+       
+    }
+    &__control {
+            font-family: inherit;
+            padding: 1em .75em;
+            width: 100%;
+
+            &--msg {
+                min-height: 7em;
+                resize: none;
+                margin: 0 var(--form-space);
+            }
+    }
+
+    &__checkbox {
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+        input, label { cursor: pointer; }
+     
+
+        input:active {
+            background: red;
+        }
+    }
+
+    &__btn {
+        flex-basis: 100%;
+        width: 100%;
+        margin: var(--form-space);
+        padding: 1.1em;
+        cursor: pointer;
+        font-family: inherit;
+        background-color: $color-orange;
+        border: 0;
+        font-size: 1.1rem;
+        color: $color-light;
+        text-transform: uppercase;
+    }
+}
+

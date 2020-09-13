@@ -1,0 +1,40 @@
+.courses-header {
+    position: relative;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $color-light;
+
+    background: 
+    linear-gradient(to top, rgba($color-dark, .8), rgba($color-dark, .2)),
+    url(../img/courses/header-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include respond(sm) {
+        background: 
+        linear-gradient(to top, rgba($color-dark, .8), rgba($color-dark, .2)),
+        url(../img/courses/header-bg-mobile.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    &__content {
+        padding: 2em;
+        height: calc(100% - 150px + 2em);
+
+        position: absolute;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+}

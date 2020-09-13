@@ -1,0 +1,35 @@
+
+    .icon-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        
+
+        &--horizontal {
+            align-items: flex-end;
+            flex-direction: row-reverse;
+        }
+
+     @include respond(md) {
+            flex-direction: row-reverse;
+            margin-right: auto;
+        }
+
+        &__icon {
+            // exactly half of the title's divider width (3.5em)
+            margin: 1em 0.875em;
+
+            @include respond(md) {
+                margin: -0.5em 1em 0 0;
+            }
+
+            &--horizontal {
+                margin: 5px 0.6em;
+            }
+
+            svg {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+    }

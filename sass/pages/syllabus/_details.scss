@@ -1,0 +1,148 @@
+.details {
+    width: 100%;
+    max-width: 1620px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "outline meetings"
+                         "modules meetings"
+                         "pre meetings";
+
+    
+    @include respond(md) {
+        padding: 3% 0;
+        grid-template-columns: 1fr;
+        grid-template-areas: "outline"
+                            "meetings-up"
+                            "modules"
+                            "meetings"
+                            "pre";
+  
+    }
+
+
+
+
+    &__section { padding: 2em;   width: 100%; }
+    
+    .outline {
+        position: relative;
+        grid-area: outline;
+        max-width: 41em;
+      
+    }
+
+    .modules {
+        grid-area: modules;
+    }
+
+    .pre {
+        display: flex;
+        grid-area: pre;
+        align-items: center;
+
+        @include respond(md) {
+            flex-direction: column;
+            .pre__list {
+                padding-top: 2em;
+                flex-basis: 100%;
+                display: block;
+                &::before { display: none; }
+            }
+        }
+
+        .heading {
+            padding: 0 1em;
+            @include divider($color-orange, left);
+            @include respond(md) {
+                text-align: center;
+                @include divider($color-orange, center);
+            }
+        }
+
+        &__list {
+            flex: 1;
+            display: flex;
+
+            &::before {
+                content: "";
+                height: 5em;
+                width: 1px;
+                background-color: $color-gray;
+                display: inline-block;
+                margin-right: 1em;
+            }
+        }
+
+    }
+    .meetings {
+        grid-area: meetings;
+        text-align: center;
+        background-color: $color-gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .heading {@include divider($color-orange, center);}
+
+    
+
+    }
+
+    .meetings-up {
+        padding: 3em;
+        &--mobile { 
+            background-color: $color-gray;
+            display: none !important;
+            grid-area: meetings-up;
+          @include respond(md) {
+                display: block !important;
+            }
+         }
+       @include respond(md) {
+            display: none;
+        }
+    }
+    .meetings-down {
+    margin: 0 auto;
+
+
+    blockquote {
+        padding: 1em;
+    }
+
+    }
+
+}
+
+
+
+.inner-grid {
+
+    display: grid;
+    grid-template-columns: 4em minmax(2em,1fr);
+    grid-template-areas: "heading heading"
+                         "icon content";
+
+    @include respond(sm) {
+        grid-template-areas: "icon heading"
+                             "content content";
+    }
+
+    &__heading {
+        grid-area: heading;
+        padding: .5em;
+        .heading {@include divider($color-orange, left);}
+    }
+    &__icon {
+        grid-area: icon;
+        padding: .5em 1em;
+    }
+    &__content {
+        grid-area: content;
+        padding: .5em 1em;
+    }
+}
+
+
+

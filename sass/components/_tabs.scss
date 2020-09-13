@@ -1,0 +1,82 @@
+.tabs {
+    padding: 1em 0;
+    &__btn {
+        text-align: center;
+        font-size: 1.1rem;
+        line-height: 1;
+        padding: 1em;
+        background: none;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-right: 1px solid $color-blue-dark;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: color .3s ease-in-out;
+  
+        &--active {
+            color: $color-orange;
+        }
+
+    }
+
+    &__controls {
+        text-align: right;
+        outline: none;
+        padding-top: 1em;
+       @include respond(mdUp) {
+            margin-top: 0;
+            margin-right: -7px;
+        }
+
+        .arrow {
+            padding: 0 0.3em;
+            cursor: pointer;
+            background: none;
+            -webkit-appearance: none;
+            appearance: none;
+            border: none;
+            outline: none;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                color: $color-orange;
+                transform: scale(1.15);
+            }
+            &:active {
+                transform: scale(1);
+            }
+
+            &--left {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+
+    &__content {
+        display: none;
+            padding: 1em;
+      
+        &--active {
+            display: block;
+        }
+
+        h5 {
+            text-transform: capitalize;
+            color: $color-orange;
+            margin-bottom: .8em;
+            font-size: 1rem;
+        }
+
+   
+    }
+
+
+
+}

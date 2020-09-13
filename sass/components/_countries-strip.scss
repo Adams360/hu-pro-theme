@@ -1,0 +1,84 @@
+.box {
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+    color: $color-blue-dark;
+    
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.1em 0;
+        @include respond(md) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include respond(md) {
+            margin-bottom: .6em;
+        }
+        svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: .5em;
+        }
+        a {
+            text-decoration: none;
+            color: currentColor;
+        }
+    }
+        &__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border: 1.5px solid currentColor;
+            border-right: 0;
+            border-left: 0;
+            padding: 1.5em 0;
+
+   
+            li {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.1rem;
+                font-weight: 500;
+                padding: .4em;
+                flex: 0 0 6em;
+
+                @include respond(sm) {
+                    padding: 0.3em 1em;
+                    flex: 0 0 5em;
+                    padding-left: 25px;
+                }
+       
+                &:not(:last-child) {
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        height: 70%;
+                        width: 2px;
+                        background-color: $color-blue-dark
+                    }
+                }
+                @include respond(md) {
+                    &:nth-child(3)::after {
+                        display: none;
+                    }
+                }
+      
+                &::after {
+                    margin-left: 1em;
+                    @include respond(sm) {
+                        margin-left: 3em;
+                    }
+                }
+
+            
+            }
+        }
+}

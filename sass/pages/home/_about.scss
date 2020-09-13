@@ -1,0 +1,71 @@
+.home-about {
+    background-color: $color-gray;
+    
+    &__top {
+        display: flex;
+        align-items: center;
+        padding: 2em 0;
+        position: relative;
+        z-index: 1;
+
+        @include respond(md) {
+            flex-direction: column;
+        }
+    }
+
+
+
+
+    &__img {
+        max-width: 30em;
+        width: 100%;
+        margin: -4em 0;
+        box-shadow: 1px 1px 1em rgba(0, 0, 0, 0.15);
+      @include respond(md) {
+            display: none;
+        }
+        &--mobile {
+            display: none;
+            width: 90%;
+            height: 100%;
+            max-height: 8em;
+            object-fit: cover;
+            position: absolute;
+            top: -50px;
+            left: 0;
+          @include respond(md) {
+                display: block;
+            }
+        }
+    }
+    &__content {
+        padding: 0 16% 0 6%;
+        z-index: 2;
+
+        .heading {
+            @include respond(sm) {
+                margin-top: -2em;
+            }
+        }
+
+    @include respond(sm) {
+        padding: 0 2.5em 1.5em; 
+      }
+
+
+      .heading {
+        @include divider($color-orange, left);
+
+    }
+
+    .lead {
+            padding-top: 2em;
+        @include respond(sm) {
+            padding-top: 4.5em;
+        }
+    }
+}
+
+
+
+}

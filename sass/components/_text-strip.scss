@@ -1,0 +1,16 @@
+.text-strip {
+        background-color: $color-cyan;
+        text-align: center;
+        padding: 4em;
+        @include respond(sm) {
+            padding: 2.5em 2em;
+        }
+
+        &__container {
+            width: 100%;
+            max-width: 53em;
+            margin: 0 auto;
+        }
+
+    
+}

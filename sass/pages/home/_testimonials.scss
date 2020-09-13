@@ -1,0 +1,114 @@
+.testimonials {
+    position: relative;
+    background:  linear-gradient(180deg, #eee, #fff);
+    padding: 0 3em;
+    &__graphic {
+        position: absolute;
+        top: 4em;
+        left: -45px;
+        img {
+            max-width: 22em;
+            width: 100%;
+            height: auto;
+        }
+
+      @include respond(md) {
+            top: 4em;
+            left: -15px;
+
+            img {
+                max-width: 13em;
+            }
+        }
+    }
+}
+
+
+// Testimonials Slider
+.testimonials-slider {
+    &__slide {
+        text-align: center;
+        height: 29em;
+        padding: 1em 0;
+        font-family: $font-secondary;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0 auto;
+         @include respond(md) {
+                 height: 100%;
+                padding: 4em 0;
+            }
+        }
+        &__img {
+            max-height: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img {
+                width: 100%;
+                max-width: 8em;
+                height: auto;
+                @include respond(sm) {
+                    max-width: 6em;
+                }
+            }
+        }
+
+        &__text {
+            max-width: 36em;
+            width: 100%;
+            margin: 1em auto;
+            &::before {
+                content: "";
+                width: 8em;
+                margin: 0 auto;
+                margin-bottom: 2em;
+                height: 5px;
+                background-color: $color-orange;
+                display: block;
+            }
+        }
+        &__profile {
+            display: flex;
+            justify-content: center;
+            padding: 1.8em 0;
+            white-space: nowrap;
+            p {
+                font-weight: 900;
+                padding: 0 1em;
+                &:not(:first-child) {
+                    border-left: 2px solid $color-blue-dark;
+                }
+            }
+        }
+
+        #testimonials-pagination {
+            bottom: 8vh;
+            @include respond(md) {
+                bottom: 10px;
+                padding-bottom: 2em;
+            }
+       } 
+}
+
+
+
+.swiper-pagination-bullet {
+    background: transparent;
+    border: 2px solid $color-blue-dark;
+    width: 11px;
+    height: 11px;
+    transition: all .4s ease-in-out;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    background: #00F1DC;
+}
+
+
+
+

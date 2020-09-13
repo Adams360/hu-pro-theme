@@ -1,0 +1,66 @@
+// BOOTSTRAP
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// Required
+
+
+// Base Styles
+@import "./base/mixins";
+@import "./base/layout";
+@import "./base/vars";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+@import "./base/fonts";
+
+@import "./lib/hamburgers/hamburgers";
+@import "./lib/swiper/swiper";
+@import "./lib/slick/slick";
+@import "./lib/tinyslider/tinyslider";
+
+// Componenets Styles
+@import "./components/btn";
+@import "./components/counter";
+@import "./components/countries-strip";
+@import "./components/divider";
+@import "./components/icon-box";
+@import "./components/svg-icon";
+@import "./components/list-lines";
+@import "./components/nav";
+@import "./components/select-box";
+@import "./components/sticker";
+@import "./components/tabs";
+@import "./components/text-strip";
+@import "./components/result-card";
+
+
+
+// Global Styles
+@import "./global/contact";
+@import "./global/contact-strip";
+@import "./global/partners";
+@import "./global/footer";
+@import "./global/wpcf7";
+
+// Pages Styes
+// home
+@import "./pages/home/header";
+@import "./pages/home/experties";
+@import "./pages/home/about";
+@import "./pages/home/testimonials";
+@import "./pages/home/team";
+@import "./pages/home/customers";
+@import "./pages/search/search";
+
+// courses
+@import "./pages/courses/header";
+@import "./pages/courses/about";
+@import "./pages/courses/experties";
+@import "./pages/courses/quote";
+
+// syllabus
+@import "./pages/syllabus/header";
+@import "./pages/syllabus/details";
+@import "./pages/syllabus/target";
+
